@@ -22,6 +22,7 @@ The main challenge was to decouple the existing monolithic codebase into indepen
 The legacy application was split into two distinct, independently deployable services:
 * **Customer Service:** Provides read-only access to the coffee suppliers catalog.
 * **Employee Service:** Provides administrative capabilities to add, update, or remove supplier records. 
+![AWS CI/CD and Microservices Architecture](images/microservices.png)
 
 ### 2. Intelligent Traffic Routing
 An Application Load Balancer (ALB) was configured to act as the single entry point, routing traffic based on URL path rules:
@@ -30,12 +31,14 @@ An Application Load Balancer (ALB) was configured to act as the single entry poi
 
 ### 3. Serverless Compute with ECS Fargate
 Both microservices are containerized using Docker and hosted on Amazon ECS using the serverless Fargate launch type. This eliminates the need to manage underlying EC2 instances while allowing independent scaling for each service.
+![AWS CI/CD and Microservices Architecture](images/configuration-cluster-ecs.png)
 
 ### 4. Zero-Downtime CI/CD Pipeline
 A robust continuous integration and deployment pipeline was built using AWS native developer tools:
 * **Source:** Code changes are pushed to AWS CodeCommit, triggering the pipeline.
 * **Artifacts:** New Docker images are built and pushed to Amazon ECR.
 * **Deployment (Blue/Green):** AWS CodeDeploy orchestrates the shift of traffic from the original container set (Blue) to the new replacement container set (Green). This ensures that the new version is fully operational before receiving production traffic.
+![AWS CI/CD and Microservices Architecture](images/target-grps-deployment.png)
 
 ## 💡 Challenges Overcome
 * **Port Conflict Management:** During local testing, resolved port conflicts by assigning specific ports (8080 and 8081) to different microservices before standardizing them for ECS deployment.
