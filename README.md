@@ -6,7 +6,7 @@ The goal of this project was to refactor a legacy monolithic Node.js application
 The main challenge was to decouple the existing monolithic codebase into independent services and implement a fully automated CI/CD pipeline enabling Blue/Green deployments for zero-downtime releases.
 
 ## 🏗️ Architecture Diagram
-![AWS CI/CD and Microservices Architecture](../Desktop/aws-architecture.png)
+![AWS CI/CD and Microservices Architecture](images/aws-architecture.png)
 
 ## 🛠️ Tech Stack & AWS Services
 * **Compute Containerization:** Amazon ECS on Fargate, Docker, Amazon ECR
