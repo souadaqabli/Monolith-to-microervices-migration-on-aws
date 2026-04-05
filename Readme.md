@@ -1,13 +1,12 @@
-# ☁️ Building Microservices and a CI/CD Pipeline with AWS
+#  Building Microservices and a CI/CD Pipeline with AWS
 
 ## 📌 Context & Objective
-The goal of this project was to refactor a legacy monolithic Node.js application (a gourmet coffee supplier management system) into a modern, scalable microservices architecture. 
+The goal of this project was to refactor a legacy monolithic Node.js application into a modern, scalable microservices architecture. 
 
 The main challenge was to decouple the existing monolithic codebase into independent services and implement a fully automated CI/CD pipeline enabling Blue/Green deployments for zero-downtime releases.
 
 ## 🏗️ Architecture Diagram
-![AWS CI/CD and Microservices Architecture](../images/aws-architecture.png)
-*(Note: Replace with the path to your architecture diagram)*
+![AWS CI/CD and Microservices Architecture](./images/arcitecture-diagram.png)
 
 ## 🛠️ Tech Stack & AWS Services
 * **Compute Containerization:** Amazon ECS on Fargate, Docker, Amazon ECR
